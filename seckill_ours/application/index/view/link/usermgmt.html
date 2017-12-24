@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="__STATIC__/css/adminStyle.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="__STATIC__/js/jquery.js"></script>
+    <script src="__STATIC__/js/public.js"></script>
+    <!--<script src="__STATIC__/js/bootstrap.js"></script>-->
+    <!--<script src="__STATIC__/js/angular.js"></script>-->
+</head>
+<style>
+    .tb_site,.tb_site>th{
+        text-align: center;
+    }
+</style>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular fl"><i></i><em>用户列表</em></span>
+    </div>
+    <div class="operate">
+        <form>
+            <select class="inline-select" id="sort">
+                <option value="2">全部</option>
+                <option value="0">使用</option>
+                <option value="1">锁定</option>
+            </select>
+            <input type="text" id="keyWord" class="textBox length-long" placeholder="输入用户名..."/>
+            <input type="button" value="查询" class="tdBtn" onclick="search()"/>
+        </form>
+    </div>
+    <table class="list-style Interlaced tb_site">
+        <tr class="tb_site" >
+            <th>用户名</th>
+            <th>昵称</th>
+            <th>头像</th>
+            <th>余额</th>
+            <th>电话</th>
+            <th>qq</th>
+            <th>等级</th>
+            <th>状态</th>
+            <th>注册时间</th>
+            <th>操作</th>
+        </tr>
+        {volist name='list' id='user'}
+        <tr>
+            <td id="allBox"><input type="checkbox" class="childChecked">
+                {$user.uid}
+            </td>
+            <td>{$user.uname}</td>
+            <td></td>
+            <td>{$user.ubalance}</td>
+            <td>{$user.uphone}</td>
+            <td>{$user.qq}</td>
+            <td>{$user.memid}</td>
+            <td>
+                {if condition="$user.state eq 0"} 使用
+                    {elseif condition="$user.state eq 1"/}锁定
+                    {else /}
+                {/if}
+            </td>
+            <td>{$user.rigtime}</td>
+            <td>
+                {if condition="$user.state eq 0"}
+                <input type="button" value="锁定" class="btn btn-default" onclick="closeUser('{$user.id}')">
+                {elseif condition="$user.state eq 1"/}
+                <input type="button" value="使用" class="btn btn-default" onclick="openUser('{$user.id}')">
+                {else /}
+                {/if}
+                <input type="button" value="重置密码" class="btn btn-default" onclick="resetPwd('{$user.id}')">
+            </td>
+        </tr>
+        {/volist}
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <div class="BatchOperation fl">
+            <input type="checkbox" id="del"/>
+            <label for="del" class="btnStyle middle">全选</label>
+        </div>
+        <div class="turnPage center fr">
+            {$list->render()}
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $usermgmt = "{:url('index/link/usermgmt')}";
+    $openUser_url = "{:url('index/user/openUser')}";
+    $closeUser_url = "{:url('index/user/closeUser')}";
+    $resetPwd_url = "{:url('index/user/resetPwd')}";
+</script>
+<script src="__STATIC__/js/usermgmt.js"></script>
+</html>

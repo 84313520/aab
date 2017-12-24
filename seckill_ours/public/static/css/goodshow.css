@@ -1,0 +1,52 @@
+/**{font-size:14px;font-family:'microsoft yahei';}*/
+/*.menu-list-right{width: 88.3%;height: 580px;float: left;border: 1px solid black}*/
+/*.page-title{border-bottom:1px #ddd solid;overflow:hidden;padding:5px 0;margin-bottom:8px;}*/
+/*.page-title .modular{display:block;}*/
+/*.page-title i{display:inline-block;width:23px;height:19px;position:relative;top:3px;margin-right:5px;}*/
+/*.page-title em{font-style:normal;color:#3d3d3d;font-size:15px;font-weight:bold;}*/
+/*.pt-link-btn{font-size:13px;background:#96aecd;display:block;padding:5px 8px;border-radius:2px;color:#fff;cursor:pointer;text-decoration: none}*/
+/*.pt-link-btn:hover{background:#a0b7d4;}*/
+/*.fl{float:left;}*/
+/*.fr{float:right;}*/
+
+/*.inline-select{padding:4px;border:1px #999 solid;}*/
+/*.textBox{padding:5px;border:1px #999 solid;}*/
+/*.tdBtn{border:1px #999 solid;background:#f1f1f1;padding:5px 15px;border-radius:2px;cursor:pointer;}*/
+/*.tdBtn:hover{background:#e8e8e8;}*/
+/*.tdnewline{word-wrap:break-word;width: 100px}!*td换行*!*/
+
+/*.textBox{border-collapse: collapse;border: 1px solid #cacfb5;word-wrap:break-word; word-break:break-all;margin-top: 15px}*/
+
+/*.goodall{width: 65px;height: 30px;margin-left: 9px;border: none;background-color:#0a8080;outline:none;color: white}*/
+/*.deleting{width: 65px;height: 30px;margin-left: 9px;border: none;background-color:#F85252;outline:none;color: white}*/
+
+
+
+.menu-list-right{width: 88.3%;height: 580px;float: left;border: 1px solid black}
+
+.page-title{border-bottom:1px #ddd solid;overflow:hidden;padding:5px 0;margin-bottom:8px;}
+.page-title .modular{display:block;}
+.page-title i{display:inline-block;width:23px;height:19px;position:relative;top:3px;margin-right:5px;}
+.page-title em{font-style:normal;color:#3d3d3d;font-size:15px;font-weight:bold;}
+.pt-link-btn{font-size:13px;background:#96aecd;display:block;padding:5px 8px;border-radius:2px;color:#fff;cursor:pointer;text-decoration: none}
+.pt-link-btn:hover{background:#a0b7d4;}
+.fl{float:left;}
+.fr{float:right;}
+
+table {border-collapse:collapse;border-spacing:0;word-wrap:break-word; word-break:break-all;margin-top: 20px}
+*{font-size:14px;font-family:'microsoft yahei';}
+/*list style*/
+.list-style{width:100%;}
+.list-style th{border:1px #ddd solid;height:35px;}
+.list-style td{border:1px #ddd solid;padding:5px;}
+.list-style td em,i{font-style:normal;}
+.list-style td a{cursor:pointer;}
+.list-style .pic-area{width:100px;}
+.list-style .thumbnail{width:30px;height:30px;}
+.list-style .children-checkbox{width:15px;height:15px;float:left;}
+.list-style .td-name{word-wrap:break-word;width: 200px}
+.list-style address{width:450px;font-style:normal;}
+
+.trbgcolor{background:#f1f1f1;}
+.pic-pic{width: 70px;height: 50px;margin: 0% 15%;}
+.page{text-align: center}

@@ -1,0 +1,76 @@
+/**
+ * Created by Administrator on 2017/12/24.
+ */
+//按用户名查询
+function search(){
+    $.ajax({
+        type:"get",
+        url:$usermgmt,
+        data:{state:$('#sort').val(),keyWord:$('#keyWord').val()},
+        dataType:"",
+        success:function(res){
+            $('body').html(res);
+        }
+    })
+}
+//发送请求-使用用户
+function openUser(u_id){
+    console.log(u_id);
+    if(confirm('确定要使用该用户？')){
+        $.ajax({
+            type:"get",
+            url:$openUser_url,
+            data:{u_id:u_id},
+            dataType:"",
+            success:function(res){
+                //console.log(res);
+                if(res.code==302){
+                    alert(res.msg)
+                }else{
+                    alert(res.msg)
+                }
+                location.reload();
+            }
+        })
+    }
+}
+//发送请求-锁定用户
+function closeUser(u_id){
+    if(confirm('确定要锁定该用户？')){
+        $.ajax({
+            type:"get",
+            url:$closeUser_url,
+            data:{u_id:u_id},
+            dataType:"",
+            success:function(res){
+                //console.log(res);
+                if(res.code==300){
+                    alert(res.msg)
+                }else{
+                    alert(res.msg)
+                }
+                location.reload();
+            }
+        })
+    }
+}
+//重置初始密码密码
+function resetPwd(id){
+    if(confirm('确定重置为初始密码？')){
+        $.ajax({
+            type:"post",
+            url:$resetPwd_url,
+            data:{u_id:id},
+            dataType:"",
+            success:function(res){
+                //console.log(res);
+                if(res.code==400){
+                    alert(res.msg)
+                }else{
+                    alert(res.msg)
+                }
+                location.reload();
+            }
+        })
+    }
+}
